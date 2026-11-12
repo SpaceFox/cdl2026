@@ -1,0 +1,602 @@
+/**
+ * Thème reveal.js « Zeste de Savoir »
+ */
+
+$primary-000: hsl(198, 40%, 87%);
+$primary-500: hsl(199, 84%, 27%);
+$primary-600: hsl(199, 85%, 21%);
+$primary-700: hsl(199, 87%, 18%);
+
+$accent-300: hsl(38, 90%, 73%);
+$accent-400: hsl(37, 92%, 65%);
+$accent-500: hsl(37, 93%, 58%);
+$accent-700: hsl(29, 80%, 44%);
+$accent-800: hsl(22, 82%, 39%);
+$accent-900: hsl(15, 86%, 30%);
+
+$purple-800: hsl(264, 58%, 37%);
+$red-600: hsl(360, 72%, 38%);
+$green-800: hsl(81, 78%, 21%);
+$blue-600: hsl(228, 74%, 43%);
+
+$grey-100: hsl(214, 15%, 91%);
+$grey-200: hsl(210, 16%, 82%);
+$grey-400: hsl(211, 10%, 53%);
+$grey-700: hsl(209, 18%, 30%);
+
+$white: hsl(0, 0%, 98%);
+$black: hsl(0, 0%, 11%);
+$true-white: hsl(0, 0%, 100%);
+
+/* Typographie */
+
+$font-sans-serif: "'Source Sans Pro', 'Segoe UI', 'Trebuchet MS', Helvetica, 'Helvetica Neue', Arial, sans-serif";
+$font-serif: "Merriweather", "Liberation Serif", "Times New Roman", Times, Georgia, FreeSerif, serif;
+$font-monospace: "'Source Code Pro', monospace";
+
+$font-size-1: 72px;
+$font-size-3: 48px;
+$font-size-4: 36px;
+$font-size-5: 30px;
+$font-size-6: 24px;
+
+$radius-3: 8px;
+
+/* Configuration du thème */
+
+@use 'template/settings' with (
+	$background: $white,
+	$background-color: $white,
+
+	$main-color: $black,
+	$main-font: $font-sans-serif,
+	$main-font-size: $font-size-5,
+	$block-margin: 24px,
+
+	$heading-color: $primary-600,
+	$heading-font: $font-sans-serif,
+	$heading-font-weight: 700,
+	$heading-text-transform: none,
+	$heading-line-height: 1.2,
+	$heading-margin: 0 0 0.5em 0,
+	$heading1-size: 2.4em,
+	$heading2-size: 1.6em,
+	$heading3-size: 1.2em,
+	$heading4-size: 1em,
+
+	$code-font: $font-monospace,
+
+	$link-color: $primary-500,
+	$link-color-dark: $primary-600,
+	$link-color-hover: $accent-900,
+	$selection-color: $true-white,
+	$selection-background-color: $primary-500,
+
+	$overlay-element-bg-color: '0 0 0',
+	$overlay-element-fg-color: '240 240 240'
+);
+
+@use 'template/theme';
+
+// FIXME inline
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+  --zds-logo: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjIyLjQgNDYuODEgNjk5LjkgMTI2LjIyIj48ZGVmcz48Y2xpcFBhdGggaWQ9ImEiIGNsaXBQYXRoVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNMCA4NDEuODloNTk1LjI4VjBIMHoiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjYSkiIHRyYW5zZm9ybT0ibWF0cml4KDEuMjUgMCAwIC0xLjI1IDAgMTA3Mi4zNjEpIj48cGF0aCBkPSJNMCAwYy0yLjA2OCA1LjEwMi01Ljc1NCA2LjY2OS0xMC41MjYgNS45MzEtNi4yMy0uOTY0LTkuNDc0LTMuOTc3LTEwLjIzLTkuMTYtLjQ2OC0zLjIwNy41NTMtNC45NzYgNC4wNjktMy45MkMtMTAuOTg4LTUuNDM5LTUuMzMzLTMuNTg5IDAgMG0tMjUuNDA1LTcuMDU2YzEuMTM0IDkuNzg1IDYuMzA3IDE3LjQwOSAxNi42ODYgMjAuMTk0IDUuMDggMS4zNjMgOS4yNDMuMDQgMTIuMjY5LTQuMTU0QzYuNjE3IDQuNzM1IDQuNzc0Ljc5IDIuMjQxLTIuOTc4LS42MTYtNy4yMjYtNS4yMjMtOC44ODUtOS41MTUtMTEuMDQ3Yy0xLjgxLS45MTEtNC4yMzgtLjg0LTUuNjgxLTMuNDggNy4wODItMi44NyAxMy45NzItMy4wMTUgMjEuMDM3LS45MjktLjQ4My02LjI5NC0zLjA2MS04LjUzNi0xMC43MTYtOS4wMTgtNS41MTYtLjM0Ni0xMC45MjQuNDU3LTE1LjU3MiAzLjczNS0yLjI1NiAxLjU5MS01LjU5MyA4LjIwOS00Ljk1OCAxMy42ODMiIHN0eWxlPSJmaWxsOiNmZmY7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE5MC4wNTYgNzY1LjQ4MikiLz48cGF0aCBkPSJNMCAwYy0xLjM5IDQuNTEzLTIuMjk4IDkuMjU2LTQuMzEyIDEzLjQ3LTEuODc2IDMuOTI5IDEuMTI3IDUuNzQ4IDIuNzQ3IDcuNTc1IDEuNzQgMS45NjQgMi42MjctLjcxNSAzLjA1OS0yLjE1MyAxLjM4OC00LjYyNSAyLjg0OC05LjIwOCA1LjQ5Mi0xMy4zLjg3Ny0xLjM1NyAxLjQzLTMuMDU3IDMuNjItMy42ODUgNC42NzIgMTcuNzY0IDEzLjA3MSAzMi4zMDcgMzMuMjI4IDM2Ljc3Ny0uMzI3LTQuMzkzLTEuNTE3LTcuMTg2LTUuODY3LTguNzczQzI0LjE1OCAyNC44NzQgMTguNTk4IDEzLjE4MiAxNC45ODYuMTIyYy0uMDg3LS4zMTUtLjAwNS0uNjc4LS4wOTQtLjk5Mi0uOTIyLTMuMjI2LS40MjctNy42ODUtNC40OTEtOC42NjYtMy45NzItLjk2LTUuMTY0IDMuMzgyLTcuMzY0IDUuNjctLjg2OS45MDQtMS4yMTQgMi41MS0zLjI0MiAyLjIyNS0uNzM2LTIuNTMtMi4wMzgtNC44OTctNC40OTItNi42OTktMy41NTggMi4wMjgtNS4wNTQgNS44NjUtNy40NzEgOS4zOTEtMi45OTQtMy44NjMtNi40MzUtNi40NjctMTAuODk0LTcuNzczLTEwLjQyNC0zLjA1My0xOS41NyA1LjE2My0xNy41NzcgMTUuOTM2IDEuODE0IDkuODA3IDEwLjUwNCAxNy42MyAyMC40NTQgMTguMzEzIDEuODMxLjEyNiA0LjI1My0uMjcxIDQuMzc1LTIuMTgxLjE3MS0yLjY4NC0xLjIzMy01LjIzMS00LjI5OS01LjgzNS0xLjYwMi0uMzE3LTMuMzIyLjAxNS00Ljk4Ni0uMDI5LTcuMjI1LS4xOTEtMTEuMzc2LTMuOTAyLTEwLjY5LTkuNTE5LjgwOS02LjYyMyA3LjA4Ny0xMS4yODcgMTMuNTU2LTEwLjA3MiA2Ljk4NiAxLjMxMSA5LjAyOCAzLjkxNyA1Ljk0NyA5LjYyNi0yLjcxMiA1LjAyNS0uNDU5IDcuOTI2IDIuNjE3IDExLjk5OUMtOS4xMDIgMTQuMDE5LTguODUyIDQuNDg1IDAgMCIgc3R5bGU9ImZpbGw6I2ZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6ZXZlbm9kZDtzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDY3LjE0MiA3NTAuNDY4KSIvPjxwYXRoIGQ9Ik0wIDBjLjQwMi04LjggMi42NDctMTYuNTE0IDguMjE2LTIzLjM3MS43NjcgNy4xMDUgMS4wODggMTQuNTI2IDguMDM1IDE4LjE4M0MyNC44NC0uNjY4IDM0LjE0MyAxLjY1MSA0NC4zMDIuNjMyYy0uMzk2LTQuNTI2LTEuNTE4LTcuNDEyLTYuODg1LTcuMDQ0LTcuMjM3LjQ5Ni0xNC4wNDQtMS45NjQtMjAuODMyLTQuMTc5LTIuMTM1LS42OTctMi42MTYtMi4xNDUtMi42MjEtNC4xOTUtLjAxLTQuMDMzLjMxMy04LjA2MyAxLjc0OS0xMS43ODggMS4xOS0zLjA4OS44NzYtNS42MzEtLjU2NC04LjQ5LTIuNDQyLTQuODUzLTQuMjQtNS40MDYtNy44MzctMS4xNTNDLjk5OS0yOC43NTItMi44MzYtMTkuOTk1LTQuODIzLTEwLjQzYy0uMTM0LjY0NS0uMjgxIDEuMjg2LS40ODkgMi4yNC00LjEwNC0xLjU5Ny02Ljg2MS0zLjE3Ni00LjAwMy04LjI4NCAxLjk2NC0zLjUxMi0uMDQzLTcuMTc5LTEuNjcxLTEwLjQzMi0zLjE0NS02LjI4NC04Ljc3My04Ljk5NS0xNS40MzQtOS4zMTYtNS45NzEtLjI4Ny05LjcxNiAzLjM0MS0xMi4zOTIgOC4zNzQtMy40NTcgNi41MDEgMi4wMTkgMTkuNjI5IDEwLjEyMyAyMy41IDIuNjYgMS4yNzIgNS42MzggMS44ODggOC40ODkgMi43NDcgMi40MDEuNzI1IDUuMjcuNjA5IDUuNTU0LTIuMDgzLjI1Ni0yLjQzNS0xLjI0OS01LjIwMS00LjUtNS42MTMtMS4zMDktLjE2Ni0yLjY2MS4wMTQtMy45OTMtLjAwNi03LjU1NC0uMTExLTExLjM0Ny0zLjk0My0xMC45Mi0xMS4wMTMuMzIzLTUuMzE0IDYuODI0LTkuNTg3IDEzLjA4My04LjYwMSA3Ljc5MyAxLjIzIDkuOTIzIDYuMDUxIDUuNTExIDEyLjczMi0uNzE5IDEuMDg5LS4yNTUgMS44NjQuMDIxIDIuNzI2Qy0xMy44ODUtOC41OC01LjU4Mi0xLjI2NyAwIDAiIHN0eWxlPSJmaWxsOiNmZmY7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUzMi45NiA3NzkuMjU3KSIvPjxwYXRoIGQ9Ik0wIDBjLTcuNTY0LjAxNy0xMi43MDktMy4zNzYtMTIuNTY3LTguMjg3LjE4MS02LjI5OSA1LjI5LTExLjMgMTEuNTY3LTExLjMyNSA1LjMzNi0uMDIyIDkuMjA3IDIuNTk1IDkuMTYzIDYuMTk1QzguMDY4LTUuNzY3IDQuNTY2LS4wMSAwIDBtMTIuMTM0IDM0LjQ4NEM5LjA2NiAyMi43MjIgOC41NyAxMi4wNjYgMTAuOTg1IDEuNDE0YzEuNTE5LTYuNjk4IDMuNzg2LTEzLjI1NCA4LjU5Ny0xOC4yNzkgMy43NzgtMy45NDcgMi43ODctNi43NDEtLjkzMy05Ljg1Ni0zLjY0IDEuNjYyLTQuODUxIDUuNTItNy40MDIgOC42NTktMi44NjItMy45MDgtNi4zNC02Ljc0OS0xMS4wMDYtOC4xMTctMTAuMjQyLTMuMDAyLTE5LjIxNiA0LjY4MS0xNy43NjUgMTUuMjk0Qy0xNi4wMjIuMTA0LTkuODc2IDQuNzc5LS41ODcgNy4wODdjMy42MzEuOTAyIDQuODQ1IDIuMTIxIDUuMDU0IDYuMDE3LjMyOCA2LjEwOS0uNDA1IDEyLjU1IDMuNDIyIDE4LjE1MS45MSAxLjMzMyAxLjc0NSAyLjA4NiA0LjI0NSAzLjIyOSIgc3R5bGU9ImZpbGw6I2ZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6ZXZlbm9kZDtzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIwLjkyOSA3NjkuOTQ2KSIvPjxwYXRoIGQ9Ik0wIDBjLTIuNjkxIDUuNDktNS40MDEgNi43MTMtMTEuNjQ2IDUuNTMtNS4xNzQtLjk3OS04LjE0Ny0zLjk4NC04Ljc4NS05LjIxNi0uMzM3LTIuNzY0Ljc2NC00LjMwNSAzLjY4NS0zLjQyQy0xMC45MTctNS4zMzktNS4wODItMy41MzMgMCAwbS0xNC42NDEtMTQuNDM5YzYuOTM0LTMuMTIyIDEzLjgwOS0xLjkyMyAyMS4wNi0xLjE3Ni4zNTYtMy42ODItMS42MzktNi4xMzktNC43MzctNy40My04LjY2Ni0zLjYxMS0xOS4xODItLjg3Ni0yNS4yMDIgNi4zMDMtLjYxNy43MzUtMS4xNDIgMS42MjQtMS40NSAyLjUzLTQuMTcgMTIuMjY0IDguMDIxIDI4LjU2IDIwLjgzNSAyNy44OTRDMy40MjkgMTMuMjg4IDcuMzQzIDYuMjg2IDQuMDgzLS41NjQuODA2LTcuNDUtNS44MS05LjUwNS0xMS45NTQtMTIuMzI4Yy0uODczLS40MDEtMi4wMTYtLjM0Ni0yLjY4Ny0yLjExMSIgc3R5bGU9ImZpbGw6I2ZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6ZXZlbm9kZDtzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjc2LjgwNCA3NjUuNDMzKSIvPjxwYXRoIGQ9Ik0wIDBjLTIuMDcgNS4zODgtNi4wODkgNi40NzYtMTEuMTg1IDUuNTMtNS44MDMtMS4wNzUtOC44NTEtNC4wNzMtOS4zMjktOS4yMy0uMy0zLjI2MSAxLjE4NC00LjMxMyA0LjE1My0zLjM1NEMtMTAuNzI0LTUuMjMzLTUuMDI2LTMuNTIzIDAgMG02LjYwOC0xNS43MjZjLS43MTItNS4wMTYtMy4yNy03LjM4MS04LjI0OS04LjE1Ny04LjYzLTEuMzQ1LTE2LjMtLjUyLTIxLjkyNSA3LjA1Ni0uNTc4Ljc3Ni0xLjE0OSAxLjYxOC0xLjQ2MSAyLjUxOS00LjE0NiAxMS45ODYgNy42ODQgMjguMjQ4IDIwLjI5IDI3LjkzOUMzLjQ3MyAxMy40MyA3LjQ1NCA2LjM4NSAzLjgwNi0uOTc4Ljg2NC02LjkxMS00LjY2Mi05LjEwNC0xMC4wOTUtMTEuNTc3Yy0xLjQ2OC0uNjY4LTIuOTY4LTEuMjY0LTUuNTYzLTIuMzYyIDcuNzkyLTMuODMzIDE0Ljg4Ny0yLjMzMSAyMi4yNjYtMS43ODciIHN0eWxlPSJmaWxsOiNmZmY7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM2OS44NzEgNzY1LjQ4MykiLz48cGF0aCBkPSJNMCAwYy02LjIzNiA2Ljk0My0xMC41MDMgMTQuOTA0LTEyLjI3MSAyNC4wMi0yLjIzNSAxMS41MzUtMi43IDIzLjA2IDIuMjcyIDM0LjE3LjUyIDEuMTYxLjcyNiAyLjk5OSAyLjQwMiAyLjUwMyAyLjAwOC0uNTkzIDEuMjg3LTIuMzcyLjc1NC0zLjc2Mi0uODQtMi4xOTEtMS40MzYtNC4zODgtLjg4Mi03LjA2IDkuODE3IDQuNzA0IDE5LjgyOCA4LjEzNSAzMS4wNjggNy4wNDktLjM3Mi00Ljc4NS0xLjg2OC03LjM0Ny03LjA2Ny03LjA2Ny03LjU3NS40MDctMTQuNjc4LTIuMTEzLTIxLjczOC00LjYzLTIuODctMS4wMjMtMy4xODEtMy4xMTktMy4wOTUtNS41MTQuMzg3LTEwLjg3OCAzLjEyOC0yMC45NjkgOS45OTYtMjkuNjgzQzUuNTQyIDQuODIgNS41MDYgNC43OTIgMCAwIiBzdHlsZT0iZmlsbDojZmZmO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTpub25lIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNDMuOTQgNzQwLjk4NikiLz48cGF0aCBkPSJNMCAwYy0xLjgyOS4yOTMtMi41NzggMS43MjMtMy41ODkgMy4wMzItMi43NTEgMy41NjYtNi4zMjQgNC40MTYtMTAuNjY0IDMuMDk2LTIuNzkxLS44NS01LjE5NC0yLjUwNy01LjY5NC01LjAzNC0uNTkyLTIuOTk1IDIuOTcxLTMuMDI1IDQuODA2LTQuMDczIDQuMDU4LTIuMzE1IDguNTE3LTMuNzg2IDEzLjAzNy00LjkyIDIuODA0LS43MDQgNC4yOTctMi40MzggNC44NTYtNS4wNTQuNTQyLTIuNTM0LS42MDItNC40NzEtMi41MTItNi4xMjEtNS42MzQtNC44NjYtMTIuMzM4LTYuMjgzLTE5LjM1MS01LjA2Ni0zLjQ5OC42MDgtNi4yNiAzLjMzMS02LjY5NSA3LjgzNiA2LjcyNy4wMzMgMTMuODM1LTEuNCAyMS41NDQgMi42NS0zLjYzNiAxLjQ3OC02LjE0MyAyLjYwOC04LjcyNyAzLjUyMi00Ljk5IDEuNzY2LTguMzM3IDUuMzY4LTEwLjIxNSAxMC4wMzMtMy4zNzggOC4zOTYgMS40MzIgMTQuNTg5IDEwLjQzMyAxMy44OTFDLTMuNjE4IDEzLjA4MiAxLjU1NyA3LjU0MyAwIDAiIHN0eWxlPSJmaWxsOiNmZmY7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQxOS40NiA3NjUuMzA4KSIvPjxwYXRoIGQ9Ik0wIDBjNy4zMzgtMS43NTIgMTMuOTA5LTEuNjc0IDIxLjQwOCAxLjU4NC0zLjY1MyAxLjczNy02LjE3OCAzLjMzMS04LjkzMiA0LjE2Mi00Ljg5MyAxLjQ3Ny03LjY2NiA1LjA4My05LjcxNCA5LjIzLTMuOTYxIDguMDIxLjczNiAxNC43NjQgOS43MjYgMTQuMzIzIDkuMDE3LS40NDIgMTQuNDg1LTUuNzYzIDEzLjYyNC0xMy41MTYtMi40MTUuMzE5LTMuMzY4IDIuNTMxLTQuODI2IDMuODcxLTIuNjA4IDIuMzk3LTUuNDgxIDMuMDAyLTguNzM4IDIuMjktMy4wNi0uNjY4LTYuMDc4LTIuMjUyLTYuNjgyLTUuMjc0LS42NDgtMy4yMzkgMy4xNDktMy4zNTYgNS4xNDItNC4yOTYgNC4wMzYtMS45MDQgOC4zMTUtMy4zMTcgMTIuNTQ5LTQuNzcxIDUuNTg2LTEuOTE4IDYuOTQtNy4yMjkgMi40NTYtMTEuMDEtNi4wOTQtNS4xMzgtMTMuMDQzLTYuOTY2LTIwLjgxMi00LjE0NkMxLjc5Mi02LjMxNS44OTctMy40NzMgMCAwIiBzdHlsZT0iZmlsbDojZmZmO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTpub25lIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxOTkuNjgzIDc0OS44MDgpIi8+PHBhdGggZD0iTTAgMGMtMS4zMDMgOS42MyAzLjI5NCAxNC41NDYgMTEuMDg0IDEzLjg5OSAxLjk0LS4xNjEgMi43NjMtLjg5IDIuNzY3LTIuNjM1LjAwMy0xLjYwMS0uNDg5LTMuMTE2LTIuNDU2LTMuMDZDNi4xODYgOC4zNTQgMi41NDcgNi4wNDkgMCAwIiBzdHlsZT0iZmlsbDojZmZmO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTpub25lIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MjcuODU0IDc4Ny4yMDIpIi8+PHBhdGggZD0iTTAgMGMyLjAyMyA4LjYyMyAxLjU2MSAxMC4zMiAxLjU1OSAyMC4yNThDMS41NTUgMzYuNDItOS44OSA0NS41OTYtMjQuNDQzIDM5LjE2N2MtMTIuODk4LTUuNy0yNy45ODctMTYuMjA3LTM2LjgwNy0yNi4xNDkuNDQtMS43NzUuNDItMS42ODMgMS4yNjItNC4wNDcgMCAwIDE0Ljg1MSAxNC42MjYgMjcuOTA1IDE3LjgyNCA3LjIzOCAxLjc3MiAxNi42Mi0yLjM1IDE5LjU0Ny05LjAxNyAwIDAgOC40OTEtMTguNTA4LTEuMDY1LTM3Ljg2Ni0xLjg4Ni0zLjk3Ni0zLjQ2MS03LjI5Ny01LjAzMy0xMC42MiAwIDAtLjYxMi0uODQ2IDAtMS4yNzQgMCAwIC44OS0uODA2IDEuNDU2IDAgMCAwIDE0LjQ2OSAyMC40MjYgMTcuMTc4IDMxLjk4MiIgc3R5bGU9ImZpbGw6I2Y4YWQzMjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6ZXZlbm9kZDtzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTU2LjY2NyA3NTIuMzg4KSIvPjxwYXRoIGQ9Ik0wIDBjMTAuMzE5IDkuOTA4IDIxLjk1OSAxNS44NTEgMzUuOTg4IDE3LjEzN0M0Ny40OSAxOC4xOTQgNTYuMTM1IDEwLjEyMSA1Ni4yLTEuNDM2Yy4wMjEtMy43NDktLjE3NC03LjU0OS0uNzc4LTExLjI0My00LjkwOC0yOS45ODUgNy4zNjYtNDEuODk0IDM3Ljc2LTQxLjI5NyA3Ljc4Mi4xNTMgMTUuMjA3IDEuMTk5IDIzLjcxOCAyLjg0NiAwIDAgMTcuMjY0IDMuNjMgMjYuMzI2IDExLjQ3MSAyLjkxMSAyLjUxOCA1LjQ1NCA1LjY1NiA4LjEzNCA4LjU0Ny43MzEgMi4wMzQtMS40NDggMS4yNTktMS40NDggMS4yNTktMTguODgzLTkuMDA3LTMwLjI0Ny0xMC42NzQtMzAuMjQ3LTEwLjY3NC0xMy4yMi0xLjk1MS0yNi40MDUtMy4zNi0zOC45NTcgMy4yOTUtOC41NzEgNC41NDQtMTIuMDYyIDExLjk4NC0xMS4xOTIgMjEuNjQ1LjcyNSA4LjA1MSAxLjk5MSAxNi4xNjYgMS41OTUgMjQuMTgzLS44NzUgMTcuNjUtMTMuOTE1IDI2LjgwNi0zMS4xODQgMjIuNTE2QzIxLjQyNCAyNi41MTYgOC41MDQgMTQuNjA3LTMuNTAzLjMwOGMtMy4yMDItMy44MTQtMi4xMzUtNC4zMjItMi4xMzUtNC4zMjJTLTQuNzI0LTQuNTM3IDAgMCIgc3R5bGU9ImZpbGw6I2ZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6ZXZlbm9kZDtzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQuMzI3IDc4Ny43OCkiLz48cGF0aCBkPSJNMCAwYy0yNi4wMDctNS4yNDgtMzQuMjA5LTQuMzEyLTQyLjQ4NiAxNi43NjMtMy4zNzUtNS4wMzQtNy4wMzUtOC4zNzctOC4wMjQtMTIuMzgtMi41NTYtMTAuMzU0IDUuOTExLTIxLjA4OCAxNy41MTItMjAuOTk2IDguNzE0LjA3IDE3LjU0OSAyLjU1NSAyNi4wNzIgNC45NjVDLTEuOTktMTAuMjUzLjgxNC05LjA0NCAyLjE5LTcuNzgzIDEuMTUyLTUuNDc0LjQyNS0yLjg4MiAwIDAiIHN0eWxlPSJmaWxsOiNmOGFkMzI7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDc3LjE4MSA3NTYuNzYxKSIvPjwvZz48L3N2Zz4=')
+}
+
+/* Slide classique */
+
+.reveal {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  .slides {
+    text-align: left;
+  }
+
+  // Les piles de slides verticales (.stack) sont sans marges ni contenu (sinon c’moche)
+  .slides section:not(.stack) {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 72px 96px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    hyphens: manual;
+  }
+
+  // Titre de slide avec filet orange
+  h2 {
+    margin-bottom: 40px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 96px;
+      height: 6px;
+      margin-top: 16px;
+      border-radius: 3px;
+      background: $accent-700;
+    }
+  }
+
+  h3 {
+    margin: 32px 0 12px;
+    color: $accent-900;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h3 + :is(p, ul, ol) {
+    margin-top: 0;
+  }
+
+  p,
+  li,
+  dd,
+  blockquote {
+    line-height: 1.4;
+    text-wrap: pretty;
+    hyphens: manual;
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  /* Listes */
+
+  ul,
+  ol,
+  dl {
+    display: block;
+    margin: 24px 0;
+    padding: 0 0 0 1.1em;
+  }
+
+  li + li {
+    margin-top: 0.4em;
+  }
+
+  li > ul,
+  li > ol {
+    margin: 0.4em 0 0;
+    padding-left: 1.1em;
+  }
+
+  ul li::marker {
+    color: $accent-700;
+  }
+
+  ol li::marker {
+    color: $primary-600;
+    font-weight: 700;
+  }
+
+  dt {
+    margin-top: 0.8em;
+  }
+
+  /* Liens */
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+
+  :focus-visible {
+    outline: 4px solid $accent-800;
+    outline-offset: 4px;
+  }
+
+  /* Citations */
+
+  blockquote {
+    width: auto;
+    margin: 24px 0;
+    padding: 4px 0 4px 32px;
+    border-left: 8px solid $accent-700;
+    background: none;
+    box-shadow: none;
+
+    font-family: $font-serif;
+    font-style: italic;
+
+    p:first-child,
+    p:last-child {
+      display: block;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  q, cite {
+    font-family: $font-serif;
+    font-style: italic;
+  }
+
+  q {
+    // Supprime les guillemets automatiques de certains navigateurs
+    &:before, &:after {
+      content: none
+    }
+  }
+
+  /* Code */
+
+  pre {
+    width: 100%;
+    margin: 24px 0;
+    border: 2px solid $grey-400;
+    border-radius: $radius-3;
+    background: $true-white;
+    box-shadow: none;
+    color: $black;
+    font-size: $font-size-6;
+    line-height: 1.35;
+
+    code {
+      padding: 20px 24px;
+    }
+  }
+
+  :not(pre) > code {
+    padding: 0.05em 0.3em;
+    border-radius: 4px;
+    background: $grey-100;
+    color: $black;
+    font-size: 0.9em;
+  }
+
+  /* Tableaux */
+
+  table {
+    margin: 24px 0;
+
+    th,
+    td {
+      padding: 0.3em 0.8em;
+      border-bottom: 2px solid $grey-200;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    th {
+      border-bottom: 4px solid $primary-600;
+      color: $primary-600;
+    }
+  }
+
+  /* Interface de reveal.js : numéro de slide, barre de progression */
+
+  .slide-number {
+    right: auto;
+    left: 2.4vmin;
+    bottom: 2vmin;
+    padding: 0;
+    background: none;
+    color: $grey-700;
+    font-family: var(--r-main-font);
+    font-size: max(20px, 2.6vmin);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .progress {
+    height: 8px;
+    background: none;
+    color: $primary-500;
+  }
+}
+
+/* Slides avec un fond sombre */
+
+// reveal.js copie les classes d’une slide sur son élément de fond, qui couvre
+// tout l’écran (même hors du canevas 16:9).
+.reveal .slide-background {
+  &.is-cover,
+  &.is-conclusion,
+  &.is-references {
+    background-color: $primary-700;
+
+    // Filet orange en bas d’écran
+    box-shadow: inset 0 -12px 0 $accent-500;
+  }
+
+  &.is-section {
+    background-color: $primary-600;
+  }
+}
+
+.reveal .slides section {
+  &.is-cover,
+  &.is-section,
+  &.is-conclusion,
+  &.is-references,
+  &.has-dark-background {
+    color: $true-white;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: $true-white;
+    }
+
+    a {
+      color: $accent-300;
+    }
+
+    ul li::marker {
+      color: $accent-400;
+    }
+
+    ol li::marker {
+      color: $accent-300;
+    }
+  }
+}
+
+.reveal.has-dark-background {
+  .slide-number {
+    color: $primary-000;
+  }
+
+  .progress {
+    color: $accent-300;
+  }
+
+  :focus-visible {
+    outline-color: $accent-300;
+  }
+}
+
+/* Slide de garde */
+
+.reveal .slides section.is-cover {
+  padding-top: 248px;
+
+  // Logo
+  &::before {
+    content: '';
+    position: absolute;
+    top: 64px;
+    left: 96px;
+    width: 400px;
+    height: 72px;
+    background: var(--zds-logo) left center / contain no-repeat;
+  }
+
+  h1 {
+    max-width: 14em;
+    margin: 0;
+    font-size: $font-size-1;
+    line-height: 1.1;
+  }
+
+  p {
+    margin: 24px 0 0;
+    color: $primary-000;
+    font-size: $font-size-4;
+  }
+
+  time {
+    display: block;
+    margin-top: 48px;
+    color: $accent-300;
+    font-size: $font-size-5;
+    font-weight: 700;
+  }
+}
+
+/* Slide de sectionnement */
+
+.reveal .slides section.is-section {
+  padding-top: 248px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 128px;
+    height: 8px;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    background: $accent-500;
+  }
+
+  h1,
+  h2 {
+    margin: 0;
+    font-size: $font-size-1;
+    line-height: 1.1;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  p {
+    margin: 24px 0 0;
+    color: $primary-000;
+    font-size: $font-size-4;
+  }
+}
+
+/* Conclusion */
+
+.reveal .slides section.is-conclusion {
+  padding-top: 248px;
+  color: $true-white;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 64px;
+    left: 96px;
+    width: 280px;
+    height: 50px;
+    background: var(--zds-logo) left center / contain no-repeat;
+  }
+
+  h1,
+  h2 {
+    max-width: 14em;
+    margin: 0;
+    color: $true-white;
+    font-size: $font-size-1;
+    line-height: 1.1;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  p {
+    margin: 24px 0 0;
+    color: $primary-000;
+    font-size: $font-size-4;
+  }
+
+  a {
+    color: $accent-300;
+  }
+}
+
+/* Références */
+
+// Fond sombre comme la conclusion, texte plus petit tout en restant lisible.
+// Logo en haut à droite pour laisser de la hauteur pour la liste de références.
+
+.reveal .slides section.is-references {
+  color: $true-white;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 80px;
+    right: 96px;
+    width: 240px;
+    height: 44px;
+    background: var(--zds-logo) right center / contain no-repeat;
+  }
+
+  h2 {
+    color: $true-white;
+
+    &::after {
+      background: $accent-500;
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    font-size: $font-size-6;
+  }
+
+  li {
+    // Les URLs longues sont coupées où ça tombe.
+    overflow-wrap: anywhere;
+  }
+
+  li + li {
+    margin-top: 0.5em;
+  }
+
+  ul li::marker {
+    color: $accent-400;
+  }
+
+  ol li::marker {
+    color: $accent-300;
+  }
+
+  a {
+    color: $accent-300;
+  }
+}
+
+/* Coloration du code (thème highlight.js ZdS) */
+
+// Reprise du thème de ZdS en plus contrasté
+
+.hljs-comment,
+.hljs-quote {
+  color: $grey-700;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: $red-600;
+}
+
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link,
+.hljs-attribute,
+.hljs-selector-pseudo {
+  color: $accent-900;
+}
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-selector-attr {
+  color: $green-800;
+}
+
+.hljs-title,
+.hljs-section {
+  color: $primary-600;
+}
+
+.hljs-number {
+  color: $blue-600;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: $purple-800;
+}
+
+.hljs-attribute,
+.hljs-keyword,
+.hljs-selector-class,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-string,
+.hljs-strong {
+  font-weight: 700;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}

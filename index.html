@@ -11,26 +11,25 @@
 
 		<link rel="stylesheet" href="dist/reset.css" />
 		<link rel="stylesheet" href="dist/reveal.css" />
-		<link rel="stylesheet" href="dist/theme/moon.css" />
-
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+		<link rel="stylesheet" href="dist/theme/zestedesavoir.css" />
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
+				<section class="is-cover">
 					<h2>De simple fork<br/>à éditeur associatif du libre :<br/>jouer dans la cour des grands ?</h2>
+					<p><time datetime="2026-11-15">SpaceFox et Amaury Carrade &bullet; 15 novembre 2026</time></p>
+					<p><img src="assets/capitoledulibre.svg" alt="Capitole du Libre" style="padding: .4rem; margin-left: -.4rem; background-color: white; border-radius: .4rem; height: 2rem;"></p>
 				</section>
 
 				<section>
 					<h2>Sommaire</h2>
 					<ol>
-						<li><a href="#/2">Zeste de Savoir, notre fil rouge</a></li>
-						<li><a href="#/3">Qu’est-ce que « éditer un texte » ?</a></li>
-						<li><a href="#/4">Les références internationales, et pourquoi on voudrait les avoir</a></li>
-						<li><a href="#/5">Être éditeur, c’est simple, mais ça a des contraintes</a><li>
-						<li><a href="#/6">Quel intérêt de se présenter « officiellement » comme éditeur ?</a></li>
+						<li><a href="#/3">Zeste de Savoir, notre fil rouge</a></li>
+						<li><a href="#/4">Qu’est-ce que « éditer un texte » ?</a></li>
+						<li><a href="#/5">Les références internationales, et pourquoi on voudrait les avoir</a></li>
+						<li><a href="#/6">Être éditeur, c’est simple, mais ça a des contraintes</a></li>
+						<li><a href="#/7">Quel intérêt de se présenter « officiellement » comme éditeur ?</a></li>
 					</ol>
 				</section>
 
@@ -38,119 +37,178 @@
 					<section>
 						<h2>Zeste de Savoir</h2>
 						<p>Zeste de Savoir est une <strong>association</strong> à but non lucratif dont le but est de
-						<q cite="https://zestedesavoir.com/pages/association/">promouvoir le partage de connaissances à travers des ressources pédagogiques gratuites et de préférence sous licence libre</q>.</p>
-						<p>Fondée en 2014 par des anciens du <strong>Site du Zéro</strong>, elle édite le site <a href="https://zestedesavoir.com/">https://zestedesavoir.com/</a>.</p>
+							<q cite="https://zestedesavoir.com/pages/association/">promouvoir le partage de connaissances à travers des
+								ressources pédagogiques gratuites et de préférence sous licence libre</q>.</p>
+						<p class="fragment">Fondée en 2014 par des anciens du <strong>Site du Zéro</strong>, elle édite le site <a
+								href="https://zestedesavoir.com/">https://zestedesavoir.com</a>.</p>
 					</section>
 					<section>
 						<h2>Zeste de Savoir, un fork</h2>
-						<p>Zeste de Savoir est <em>un fork « conceptuel »</em> de feu le Site du Zéro.</p>
-						<p>Le site est un fork <a href="https://github.com/progdupeupl/pdp_website">du site de Progdupeupl</a>.</p>
-						<p>Les billets sont un fork « conceptuel » <a href="https://linuxfr.org/journaux">des journaux de linuxfr.org</a>.</p>
-						<p>On a conservé <strong>la validation</strong> des articles et tutoriels.</p>
+						<p>Zeste de Savoir est un <em>fork « conceptuel »</em> de feu le Site du Zéro.</p>
+						<p class="fragment">Le logiciel du site est un fork <a href="https://github.com/progdupeupl/pdp_website">du site de Progdupeupl</a>.</p>
+						<p class="fragment">Les billets sont un fork « conceptuel » <a href="https://linuxfr.org/journaux">des journaux de
+							linuxfr.org</a>.</p>
+						<p class="fragment">On a conservé <strong>la validation</strong> des articles et tutoriels.</p>
 					</section>
 					<section>
 						<h2>« Valider » des publications ?</h2>
-						<p>Une publication <strong>validée</strong> est relue, corrigée, retravaillée et améliorée par l’auteur et un·e « validateur·ice » de l’équipe de Zeste de Savoir.</p>
-						<p>Elle n’est publiée qu’après validation.</p>
-						<blockquote>Ça ne ressemblerait pas à un travail d’édition, tout ce bazar ?</blockquote>
+						<p>Une publication <strong>validée</strong> est relue, corrigée, retravaillée, et améliorée, par l’auteur·ice et un·e
+							« validateur·ice » de l’équipe de Zeste de Savoir.</p>
+						<p class="fragment">Elle n’est publiée qu’après validation.</p>
+						<blockquote class="fragment">…Ça ne ressemblerait pas à un travail d’édition, tout ce bazar ?</blockquote>
 					</section>
 				</section>
 
 				<section>
+					<section class="is-section">
+						<h2>Éditer un texte ?</h2>
+					</section>
 					<section>
 						<h2>Qu’est-ce que « éditer un texte » ?</h2>
 						<p>C’est le rendre :</p>
 						<ul>
-							<li>plus clair ;</li>
-							<li>plus pertinent ;</li>
-							<li>mieux adapté au public visé ;</li>
-							<li>correct sur la forme.</li>
+							<li class="fragment">plus clair ;</li>
+							<li class="fragment">plus pertinent ;</li>
+							<li class="fragment">mieux adapté au public visé ;</li>
+							<li class="fragment">correct sur la forme.</li>
 						</ul>
-						<p>Mais aussi…</p>
+						<p class="fragment">Mais aussi…</p>
 					</section>
 					<section>
 						<h2>Qu’est-ce que « éditer un texte » ?</h2>
 						<p>Éditer un texte, c’est aussi :</p>
 						<ul>
-							<li>Le diffuser <em>(c’est-à-dire le rendre accessible au public)</em> ;</li>
-							<li>et le promouvoir <em>(faire en sorte qu’il soit découvert par son public)</em>.</li>
+							<li class="fragment">Le diffuser <em>(c’est-à-dire le rendre accessible au public)</em> ;</li>
+							<li class="fragment">et le promouvoir <em>(faire en sorte qu’il soit découvert par son public)</em>.</li>
 						</ul>
-						<p>… mais alors…</p>
+						<p class="fragment">… mais alors…</p>
 					</section>
 					<section>
-						<p><strong>Révélation !</strong></p>
-						<h2>Zeste de Savoir est un éditeur</h2>
+						<p><strong><em>Révélation !</em></strong></p>
+						<h2>Zeste de Savoir est un éditeur.</h2>
 						<p>Et on est même éditeurs <em>depuis le début !</em></p>
 					</section>
 					<section>
 						<p>Alors, on s’est dit qu’on allait officialiser ça.</p>
 						<p>Et on a commencé à creuser ce que ça impliquait.</p>
+						<p class="fragment"><em>C’était à la fois plus compliqué et plus simple que prévu…</em></p>
 					</section>
 				</section>
 
 				<section>
-					<section>
+					<section class="is-section">
 						<h2>Trois normes internationales</h2>
-						<h3>Et pourquoi on voudrait, ou pas, les mettre en place</h3>
+						<p>Et pourquoi on voudrait, ou pas, les mettre en place</p>
 					</section>
 					<section>
 						<h2>L’ISSN</h2>
 						<h3>« International Standard Serial Number »</h3>
-						<p>Il identifie <strong>une publication en série</strong> (journaux, revues…)</p>
-						<p>Il suffit <a href="https://www.bnf.fr/fr/que-dois-je-faire-en-tant-quediteur-pour-quun-issn-soit-attribue-ma-publication">de remplir les conditions</a> puis <a href="https://www.bnf.fr/fr/centre-d-aide/issn-mode-demploi#step03">de le demander</a> auprès de la BnF. C’est gratuit !</p>
-						<p>Le site https://zestedesavoir.com possède un ISSN : <code>3132-1135</code> <em>(le site, et pas l’association)</em></p>
+						<p class="fragment">Il identifie <strong>une publication en série</strong> (journaux, revues…).</p>
+						<p class="fragment">Il suffit <a
+								href="https://www.bnf.fr/fr/que-dois-je-faire-en-tant-quediteur-pour-quun-issn-soit-attribue-ma-publication">de
+							remplir les conditions</a> puis <a href="https://www.bnf.fr/fr/centre-d-aide/issn-mode-demploi#step03">de le
+							demander</a> auprès de la BnF. C’est gratuit !</p>
+						<p class="fragment">Le site <code>https://zestedesavoir.com</code> possède un ISSN : <strong><code>3132-1135</code></strong> <em>(le site, et pas
+							l’association)</em>.</p>
+
+						<aside class="notes">
+							<p>Publication en série régulière ou non. Nous, on est une publication irrégulière.</p>
+							<p>Notre ISSN : <strong><code>3132-1135</code></strong></p>
+						</aside>
 					</section>
 					<section>
 						<h2>L’ISBN</h2>
 						<h3>« International Standard Book Number »</h3>
-						<p>Il identifie une édition d’<strong>un livre</strong> au sens large (papier, livre électronique, sous forme de pages web…)</p>
-						<p>En France, c’est géré par <a href="https://www.afnil.org/nos-services/">l’AFNIL</a> ; le service <a href="https://www.afnil.org/tarification/">est payant</a> avec un tarif <em>par série</em> d’ISBN – soyez prévoyants !</p>
-						<p>Pour Zeste de Savoir, il pourrait servir à identifier chaque édition de chaque publication éditorialisée, ce qui faciliterait leur référencement.</p>
+						<p class="fragment">Il identifie une édition d’<strong>un livre</strong> au sens large (papier, livre électronique, sous forme de
+							pages web…).</p>
+						<p class="fragment">En France, c’est géré par <a href="https://www.afnil.org/nos-services/">l’AFNIL</a> ; le service <a
+								href="https://www.afnil.org/tarification/">est payant</a> avec un tarif <em>par série</em> d’ISBN —
+							soyez prévoyants !</p>
+						<p class="fragment">Pour Zeste de Savoir, il pourrait servir à <strong>identifier chaque édition de chaque publication éditorialisée</strong>, ce
+							qui faciliterait leur référencement.</p>
+
+						<aside class="notes">
+							<p>Tant que c’est justifié, on peut faire une demande de 10000 ISBNs si on veut.</p>
+							<p>Comme on publie plusieurs versions de chaque contenu, il nous faudrait trois ISBN par contenu : web, PDF,
+								ePub. Aujourd’hui ça fait quasi 2000 ISBNs, qu’on doublerait, pour voir venir.
+							</p>
+							<p>À nous de les stocker soigneusement (redemander des ISBNs perdus est re-facturé) et d’anticiper (une demande urgence est facturée cher).</p>
+							<p>Ordres de grandeur : 40 € (première demande), 30 € (demande subsidiaire), 160 € (demande urgente), 30 € (ISBNs oubliés).</p>
+						</aside>
 					</section>
 					<section>
 						<h2>Le DOI</h2>
 						<h3>« Digital Object Identifier »</h3>
-						<p>Identifie des <strong>resources numériques stables</strong>, typiquement des articles scientifiques, jeux de données, auteurs…</p>
-						<p>C’est l’idéal si on veut que les publications soient référencées dans des bibliographies…</p>
-						<p>… mais ils impliquent <a href="https://datacite-france.fr/les-services-du-consortium/comment-attribuer-un-doi/">des contraintes et conditions drastiques</a> pour leur génération.</p>
+						<p class="fragment">Identifie des <strong>resources numériques stables</strong>, typiquement des articles scientifiques, jeux de
+							données, auteurs…</p>
+						<p class="fragment">C’est l’idéal si on veut que les publications soient référencées dans des bibliographies…</p>
+						<p class="fragment">… mais ils impliquent <a
+								href="https://datacite-france.fr/les-services-du-consortium/comment-attribuer-un-doi/">des contraintes
+							et conditions drastiques</a> pour leur génération.</p>
+
+						<aside class="notes">
+							<p>Un DOI exige : </p>
+							<ul>
+								<li>un nom (composé d’un préfixe fourni par le consortium) ;</li>
+								<li>une URL <strong>absolument stable, à vie</strong> ;</li>
+								<li>des métadonnées exposées selon un format précis (schéma de métadonnées DataCite)</li>
+							</ul>
+							<p>Pour obtenir un préfixe DOI, il faut être membre d’un consortium (l’Inist-CNRS pour la France).</p>
+							<p>Coût : 2500 à 3000 euros par an (adhésion + frais d’infrastructure), 2600 €/an pour nous a priori.</p>
+							<p>Ensuite, on appelle une API pour déclarer chaque DOI pour chaque nouvelle publication.</p>
+						</aside>
 					</section>
 				</section>
 
 				<section>
-					<section>
+					<section class="is-section">
 						<h2>Être éditeur, c’est simple, mais ça a des contraintes</h2>
-						<p><small>Parce que ça serait <em>trop</em> simple sans ces contraintes !</small></p>
+						<p>Parce que ça serait <em>trop</em> simple sans ces contraintes !</p>
 					</section>
 					<section>
 						<h2>Se déclarer éditeur de presse associative en France</h2>
-						<p>C’est très simple : il suffit de suivre les démarches <a href="https://associations.gouv.fr/la-presse-associative">listées ici</a>. Concrètement, il suffit d’avoir :</p>
+						<p class="fragment">C’est très simple : il suffit de suivre les démarches <a
+								href="https://associations.gouv.fr/la-presse-associative">listées ici</a>. Concrètement, il suffit :</p>
 						<ul>
-							<li>Un nom distinctif ;</li>
-							<li>Un directeur de la publication ;</li>
-							<li>De respecter le dépôt légal <em>qui est automatique pour les publications en ligne</em> ;</li>
-							<li>Et d’afficher la poignée de mentions légales aux endroits demandés.</li>
+							<li class="fragment">d’avoir un <strong>nom distinctif</strong> ;</li>
+							<li class="fragment">de déclarer un·e <strong>directeur·rice de la publication</strong> ;</li>
+							<li class="fragment">de respecter le <strong>dépôt légal</strong> — <em>qui est automatique pour les publications en ligne</em> ;</li>
+							<li class="fragment">et d’afficher la poignée de mentions légales aux endroits demandés.</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Le directeur de la publication</h2>
-						<p>C’est la personne <strong>physique</strong> qui est responsable de la publication devant la loi.</p>
-						<blockquote cite="">Le directeur de la publication est civilement et pénalement responsable de l'ensemble de la publication et de son contenu, en cas de poursuites exercées pour « délits de presse » : publication de nouvelles interdites ou fausses, diffamation, injure, etc.</blockquote>
+						<h2>Le ou la directrice de la publication</h2>
+						<p class="fragment">C’est la personne <strong>physique</strong> qui est responsable de la publication devant la loi.</p>
+						<blockquote cite="" class="fragment">Le ou la directrice de la publication est <strong>civilement et pénalement responsable</strong>
+							de l'ensemble de la publication et de son contenu, en cas de poursuites exercées pour « délits de presse » : publication de
+							nouvelles interdites ou fausses, diffamation, injure, etc.
+						</blockquote>
 					</section>
 					<section>
 						<h2>Pas d’autorisation préalable !</h2>
 						<p>Est éditeur qui veut, il suffit de remplir les conditions légales et de l’annoncer.</p>
-						<h2>Et pour l’édition commerciale ?</h2>
-						<p>L’entreprise doit avoir le <a href="https://www.insee.fr/fr/information/2406147">code NAF</a> adéquat<br/>(exemple : <code>58.11Z</code> pour l’édition de livres).</p>
 					</section>
 					<section>
-						<h2>Obtenir ses numéros de normes internationales</h2>
+						<h2>Et pour l’édition commerciale ?</h2>
+						<p>L’entreprise doit avoir le <a href="https://www.insee.fr/fr/information/2406147">code NAF</a> adéquat<br/>(exemple :
+							<code>58.11Z</code> pour l’édition de livres).</p>
+					</section>
+					<section>
+						<h2>Obtenir ses numéros</h2>
 						<dl>
 							<dt>ISSN</dt>
-							<dd><a href="https://www.bnf.fr/fr/centre-d-aide/issn-mode-demploi#step03">Sur simple demande</a>. Gratuit, délais de quelques jours.</dd>
+							<dd><a href="https://www.bnf.fr/fr/centre-d-aide/issn-mode-demploi#step03">Sur simple demande</a>. Gratuit,
+								délais de quelques jours.
+							</dd>
 							<dt>ISSN</dt>
-							<dd><a href="https://www.afnil.org/nos-services/">À acheter auprès de l’AFNIL</a>. Payant <em>(quelques dizaines d’euros)</em>, délais de plusieurs semaines.</dd>
+							<dd><a href="https://www.afnil.org/nos-services/">À acheter auprès de l’AFNIL</a>. Payant <em>(quelques
+								dizaines d’euros)</em>, délais de quelques semaines.
+							</dd>
 							<dt>DOI</dt>
-							<dd><a href="https://datacite-france.fr/les-services-du-consortium/comment-attribuer-un-doi/">Suivre des procédures complexes</a> dont l’adhésion à un consortium. Couts et délais inconnus.</dd>
+							<dd><a href="https://datacite-france.fr/les-services-du-consortium/comment-attribuer-un-doi/">Suivre des
+								procédures complexes</a>, dont l’adhésion à un consortium et la signature d’un contrat. Payant <em>(quelques milliers d’euros <strong>par an</strong>)</em>,
+								délai de quelques semaines.
+							</dd>
 						</dl>
 					</section>
 					<section>
@@ -159,49 +217,75 @@
 				</section>
 
 				<section>
-					<section>
+					<section class="is-section">
 						<h2><strong>Pourquoi</strong> se présenter comme éditeur ?</h2>
 					</section>
-					<section>À Zeste de Savoir, on a identifié trois réponses à cette question.</section>
+					<section>Chez Zeste de Savoir, on a identifié trois réponses à cette question.</section>
 					<section>
 						<h2>1. Clarifier les rôles</h2>
-						<p><em>« Valider un tutoriel ou un article »</em>,c’est le terme historique mais que personne ne maitrisait.</p>
-						<p><em>« Éditer une publication »</em> a un sens précis et (relativement) bien connu.</p>
-						<p>Tout le monde gagne du temps.</p>
-						<p>Les communications sont plus claires.</p>
+						<div class="fragment">
+							<p><q>« Valider un tutoriel ou un article »</q>, c’est le terme historique, mais que personne ne maitrisait.</p>
+							<p><q>« Éditer une publication »</q> a un sens précis et (relativement) bien connu.</p>
+						</div>
+						<p class="fragment">Tout le monde gagne du temps.</p>
+						<p class="fragment"><strong>Les communications sont plus claires.</strong></p>
 					</section>
 					<section>
 						<h2>2. Donner de la légitimité<br/> à tout le monde</h2>
-						<p>« <strong>Publier un article</strong> dans une revue » c’est plus prestigieux que « écrire sur un site web ».</p>
-						<p><small>Et le prestige, ça compte dans la motivation des auteur·ices !</small></p>
-						<p>« Éditer pour une revue », c’est plus flatteur que « corriger pour un site web ».</p>
-						<p><small>La motivation des éditeur·ices compte aussi, surtout les bénévoles !</small></p>
+						<div class="fragment">
+							<p><cite>« <strong>Publier un article</strong> dans une revue »</cite> c’est plus prestigieux que <cite>« écrire sur un site web »</cite>.</p>
+							<p><small>Et le prestige, ça compte dans la motivation des auteur·ices !</small></p>
+						</div>
+						<div class="fragment">
+							<p><cite>« <strong>Éditer pour une revue</strong> »</cite>, c’est plus flatteur que <cite>« corriger pour un site web »</cite>.</p>
+							<p><small>La motivation des éditeur·ices compte aussi, surtout les bénévoles !</small></p>
+						</div>
 					</section>
 					<section>
 						<h2>3. Obtenir les références pour asseoir cette légitimité</h2>
-						<p>L’ISSN référence la revue à l’international ;<br/> l’ISBN référence l’ouvrage à l’international.</p>
-						<p>Le travail de l’auteur n’est plus <em>présent sur Internet</em>, il est <em>référencé parmi ses pairs</em>.</p>
-						<p>Ces références permettent d’être trouvé en bibliothèque et cité en bibliographie.</p>
+						<ul class="fragment">
+							<li>L’ISSN référence la revue <em>(le site)</em> à l’international.</li>
+							<li>L’ISBN référence l’ouvrage <em>(un cours, article)</em> à l’international.</li>
+						</ul>
+						<div class="fragment">
+							<p>Le travail de l’auteur n’est plus <em>présent sur Internet</em>, il est <em>référencé parmi ses pairs</em>.</p>
+							<p>Ces références permettent d’être <strong>trouvé en bibliothèque</strong> et <strong>cité en bibliographie</strong>.</p>
+						</div>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>Résumé</h2>
+						<h2>En résumé…</h2>
 						<p>N’importe qui peut être légalement éditeur, à condition d’avoir un directeur de la publication.</p>
-						<p>L’ISSN identifie une publication en série , l’ISBN identifie une édition d’un ouvrage.</p>
+						<p>L’ISSN identifie une publication en série, l’ISBN identifie une édition d’un ouvrage.</p>
 						<p>Se déclarer « éditeur » sert à clarifier les rôles et légitimer le travail des intervenants.</p>
 					</section>
 					<section>
 						<h2>Conclusion</h2>
 						<p>Se déclarer éditeur, c’est du travail <strong>humain</strong> à destination des <strong>humains</strong>.</p>
-						<p>En France, c’est simple et pas cher<br/><small>sauf si on veut des DOI.</small></p>
-						<p>Les processus eux-mêmes sont très humains !<br/><small>ne cherchez pas d’API REST !</small></p>
+						<p>En France, c’est simple, et pas cher.<br/><small>…Sauf si on veut des DOI.</small></p>
+						<p>Les processus eux-mêmes sont très humains !<br/><small><em>Ne cherchez pas d’API REST ! (…Sauf si on veut des DOI.)</em></small></p>
 					</section>
 				</section>
 
-				<section>
+				<section class="is-conclusion">
 					<h1>Des questions ?</h1>
+				</section>
+
+				<section class="is-references">
+					<h2>Références</h2>
+					<p>Beaucoup d’informations se trouvent sur le site de la Bibliothèque Nationale de France (BnF) et de l’Agence francophone
+						pour la Numérotation Internationale du Livre (AFNIL).</p>
+					<ul>
+						<li><a href="https://zestedesavoir.com/pages/editeur/"><em>Zeste de Savoir, un éditeur associatif</em></a>, contenant explications et mentions légales.</li>
+						<li><a href="www.bnf.fr/fr/centre-d-aide/issn-mode-demploi#step03"><em>ISSN mode d’emploi</em></a> (BnF)</li>
+						<li><a href="https://www.afnil.org/nos-services/">Demander un ISBN</a> (AFNIL)</li>
+						<li><a href="https://datacite-france.fr/les-services-du-consortium/comment-attribuer-un-doi/"><em>Comment attribuer un DOI ?</em></a>,
+							<a href="https://datacite-france.fr/les-services-du-consortium/comment-attribuer-un-doi/"><em lang="en">Membership</em></a>,
+							<a href="https://datacite.org/fees/"><em lang="en">Fees</em></a> (Consortium DataCite France)</li>
+						<li><a href="https://documentation.ardc.edu.au/doi/ardc-consortium"><em>ARDC Consortium</em></a> (ARDC)</li>
+					</ul>
 				</section>
 			</div>
 		</div>
