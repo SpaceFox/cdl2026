@@ -500,14 +500,6 @@ $radius-3: 8px;
     border-radius: 8px;
   }
 
-  &.is-boxed {
-    img,
-    video,
-    iframe {
-      box-shadow: $glass-shadow;
-    }
-  }
-
   pre {
     display: inline-block;
     width: auto;
